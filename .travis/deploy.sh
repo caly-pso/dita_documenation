@@ -1,14 +1,6 @@
 #!/bin/bash
 
-echo "Deploy $TRAVIS_BRANCH !"
-
 set -o errexit -o nounset
-
-if [ "$TRAVIS_BRANCH" != "master" ]
-then
-  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
-  exit 0
-fi
 
 rev=$(git rev-parse --short HEAD)
 
@@ -25,10 +17,16 @@ git remote add upstream "https://$GH_TOKEN@github.com/$USERNAME/$REPONAME.git"
 git fetch upstream
 git reset upstream/gh-pages
 
-#touch .
+touch .
 
 ls
 git status
+
+if [ "$TRAVIS_BRANCH" != "master" ]
+then
+  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
+  exit 0
+fi
 
 git add -A .
 git commit -m "rebuild pages at ${rev}"
