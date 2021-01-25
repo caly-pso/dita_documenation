@@ -7,6 +7,6 @@ after_success:
   - sh .travis/deploy.sh
 env:
   global:
-    - DITAMAP=/path/to/your/ditamap/file
-    - DITAVAL=/path/to/your/ditaval/file
+    - DITAMAP=/dita_documenation/create_portfolio/create_portfolio.ditamap
+#     - DITAVAL=/path/to/your/ditaval/file
     - ANT_OPTS=-Xmx1024M
