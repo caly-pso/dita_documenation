@@ -1,16 +1,12 @@
-language: xslt
+language: dita
 install:
-- echo "Installed"
+  - echo "Installed"
 script:
-- sh .travis/publish.sh
+  - sh .travis/publish.sh
 after_success:
-- sh .travis/deploy.sh
+  - sh .travis/deploy.sh
 env:
   global:
-  - TITLE="Intelligent Interactive Styleguide"
-  - WELCOME="Your DITA Styleguide"
-  - TEMPLATE="oxygen"
-  - VARIANT="tiles"
-notifications:
-  email:
-on_success: always
+    - DITAMAP=/path/to/your/ditamap/file
+    - DITAVAL=/path/to/your/ditaval/file
+    - ANT_OPTS=-Xmx1024M
