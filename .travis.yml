@@ -1,6 +1,6 @@
 language: dita
 before_install:
-  - openssl aes-256-cbc -K $encrypted_0a6446eb3ae3_key -iv $encrypted_0a6446eb3ae3_iv -in licenseKey.txt.enc -out licenseKey.txt -d
+  - openssl aes-256-cbc -K $encrypted_ed75db31fc5b_key -iv $encrypted_ed75db31fc5b_iv -in licenseKey.txt.enc -out licenseKey.txt -d
 install:
   - echo "Installed"
 script:
