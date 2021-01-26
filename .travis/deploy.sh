@@ -22,9 +22,9 @@ touch .
 ls
 git status
 
-if [ "$TRAVIS_BRANCH" != "master" ]
+if [ "$TRAVIS_BRANCH" != "main" ]
 then
-  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
+  echo "This commit was made against the $TRAVIS_BRANCH and not the main! No deploy!"
   exit 0
 fi
 
